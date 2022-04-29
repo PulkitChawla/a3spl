@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="style.css">
+<meta charset="ISO-8859-1">
+<title>Registration Page</title>
+<script type="text/javascript">
+    function Validate() {
+        var password = document.getElementById("pwd1").value;
+        var confirmPassword = document.getElementById("cpwd1").value;
+        if (password != confirmPassword) {
+            alert("Password does not match.");
+            
+            return false;
+            
+        }
+        return true;
+    }
+</script>
+</head>
+<body>
+<center><b>Registration Form</b><br><br>
+
+<form action="RegServlet" method="post">
+<table align="center">
+
+<tr>
+<td>Name</td>
+<td><input type="text" name="name" required="required" placeholder="Enter your name"></td>
+</tr>
+
+<tr>
+<td>Email Id</td>
+<td><input type="email" name="email" required="required" placeholder="Enter your email" pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{3,20}$"></td>
+</tr><!-- "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,20}$" -->
+
+<tr>
+<td>Password</td>
+<td><input type="text" name="pwd" id="pwd1" required="required" placeholder="Enter your password" ></td><!-- onKeyPress -->
+</tr>
+
+<tr>
+<td>Confirm Pwd</td>
+<td><input type="text" name="cpwd" id='cpwd1' required="required" placeholder="Retype password"></td>
+</tr>
+
+<tr>
+<td>City</td>
+<td><input type="text" name="city" required="required" placeholder="Enter city name"></td>
+</tr>
+
+<tr>
+<td>State</td>
+<td><input type="text" name="state" required="required" placeholder="Enter state name"></td>
+</tr>
+
+<tr>
+<td>Gender</td>
+<td><input type="radio" name="gender" required="required" value="male">Male
+<input type="radio" name="gender" required="required" value="female">Female
+</td>
+</tr>
+
+<tr>
+<td>Nationality</td>
+<!-- <td><input type="text" name="country" required="required" placeholder="Enter country name"></td> -->
+<td>
+<select name="coun">Select Your Country
+<option value="ind">India</option>
+<option value="aus">Australia</option>
+<option value="jap">Japan</option>
+<option value="ban">Bangladesh</option>
+</select>
+</td>
+</tr> 
+
+<tr>
+<td>Mobile Number</td>
+<td><input type="text" name="mob" required="required" placeholder="Enter mobile number" pattern="[0-9]{10}" title="Please enter exactly 10 digits"></td><!-- pattern="[1-9]{1}[0-9]{9}" -->
+</tr>
+
+
+<center>
+<tr>
+<td><input type="submit" value="submit" autofocus onclick="return Validate()"/></td>
+<td><input type="reset" value="reset"></td>
+</tr>
+</center>
+</table>
+<br><br>
+<a href="index.jsp">Go Back To Home Page</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<a href="log.jsp">Click Here To Login</a>
+</form>
+</center>
+</body>
+</html>
