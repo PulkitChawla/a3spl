@@ -1,0 +1,24 @@
+create database test
+use test
+create table detail(name varchar(20),city varchar(20),state varchar(20));
+insert into detail values('pulkit','ndls','delhi');
+insert into detail values('rohit','noida','up');
+insert into detail values('mohit','gurgaon','hary');
+
+select * from detail
+desc detail
+delete from detail
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345';
+FLUSH PRIVILEGES;
+GRANT ALL PRIVILEGES ON *.* TO 'root%' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+
+
+create table reg(name varchar(20),email varchar(20),pwd varchar(20),city varchar(20),state varchar(20));
+desc reg
+alter table reg add column cpwd varchar(20) after pwd
+select * from reg
+delete from reg where name='j'
+alter table reg add column gender varchar(20)after state
+alter table reg add column coun varchar(20)after gender
+alter table reg add column mob int not null after coun 
